@@ -20,9 +20,6 @@
 		</maml:description>
 		<command:syntax>
 			<!--Parameter Sets-->
-			<command:syntaxItem>
-				<maml:name>Clean-Downloads</maml:name>
-			</command:syntaxItem>
 		</command:syntax>
 		<command:parameters>
 			<!--All Parameters-->
@@ -78,6 +75,7 @@
 			<!--Links-->
 			<maml:navigationLink>
 				<maml:linkText>Link 1</maml:linkText>
+				<maml:uri>https://github.com/derekschauland/PowerShell_Help/blob/master/Clean-Downloads.md</maml:uri>
 			</maml:navigationLink>
 		</maml:relatedLinks>
 	</command:command>
