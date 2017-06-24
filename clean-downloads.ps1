@@ -1,4 +1,6 @@
-# .ExternalHelp "https://github.com/derekschauland/PowerShell_Help/blob/master/Clean-Downloads.md"
+<#
+ .ExternalHelp .\clean-downloads-Help.xml
+#>
 [cmdletbinding()]
 param($days = "90",
 [string]$path = "D:\shares\profiles",
