@@ -1,5 +1,5 @@
 <#
- .ExternalHelp .\clean-downloads-Help.xml
+ .ExternalHelp .\clean-downloads.ps1-Help.xml
 #>
 [cmdletbinding()]
 param($days = "90",
