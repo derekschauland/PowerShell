@@ -1,3 +1,4 @@
+# .ExternalHelp "https://github.com/derekschauland/PowerShell_Help/blob/master/Clean-Downloads.md"
 [cmdletbinding()]
 param($days = "90",
 [string]$path = "D:\shares\profiles",
