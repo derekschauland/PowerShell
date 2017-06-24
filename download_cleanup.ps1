@@ -18,7 +18,7 @@ start-log -LogPath $logpath -logname $logname -ScriptVersion 1.0
 
 }
 else {
-start-log -LogPath $logpath -logname $whatiflog -ScriptVersion 1.0
+start-log -LogPath $logpath -logname $whatiflogfile -ScriptVersion 1.0
     
 }
 
