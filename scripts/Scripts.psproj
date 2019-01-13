@@ -1,0 +1,14 @@
+﻿<Project Synchronized="False" SyncFilter="*.ps1;*.psm1;*.psd1;*.ps1xml;*.psf;*.pss;*.xml;*.help.txt">
+  <Version>2.1</Version>
+  <FileID>eecb8c54-526c-4e94-a913-a1ce0c302836</FileID>
+  <ProjectType>0</ProjectType>
+  <Folders />
+  <Files>
+    <File Build="0">Startup.pss</File>
+    <File Build="2">.gitignore</File>
+    <File Build="0" Shared="False" ReferenceFunction="Invoke-notify-teams_ps1">notify-teams.ps1</File>
+    <File Build="0" Shared="False" ReferenceFunction="Invoke-check-archiveqty_ps1">check-archiveqty.ps1</File>
+    <File Build="0" Shared="False" ReferenceFunction="Invoke-clean-downloads_ps1">clean-downloads.ps1</File>
+    <File Build="0" Shared="False" ReferenceFunction="Invoke-hello_ps1">hello.ps1</File>
+  </Files>
+</Project>
