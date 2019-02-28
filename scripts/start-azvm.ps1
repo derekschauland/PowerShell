@@ -69,7 +69,7 @@ Function Start-AzureVM
 		
 		If ((get-azvm -resourcegroupname $ResourceGroupName -name $VMName -status | Select-Object powerstate).powerstate -eq "VM running")
 		{
-			
+			Write-Output "$VMName is already running"
 		}
 		Else
 		{
