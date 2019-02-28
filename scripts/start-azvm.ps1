@@ -48,14 +48,34 @@ Function Start-AzureVM
 	#Get the vm provided and start it
 	If ([string]::IsNullOrEmpty($VMname))
 	{
-		#No vm provided - check for vm and start
-		(get-azvm -resourcegroupname $ResourceGroupName) | start-azvm
+		#No vm provided - check for vm and get status
+		If (((get-azvm -resourcegroupname $ResourceGroupName) -status | Select-Object powerstate).powerstate -eq "VM running")
+		{
+			Write-Output "No need to start this vm - already running"
+		}
+		Else
+		{
+			ForEach ($azvm In (get-azvm -resourcegroupname $ResourceGroupName))
+			{
+				start-azvm $azvm
+			}
+		}
 	}
 	Else
 	{
 		#vmname provided - start it up
 		
-		(get-azvm -resourcegroupname $ResourceGroupName -name $VMName) | start-azvm
+		If ((get-azvm -resourcegroupname $ResourceGroupName -name $VMName -status | Select-Object powerstate).powerstate -eq "VM running")
+		{
+			
+		}
+		Else
+		{
+			ForEach ($azvm In (get-azvm -resourcegroupname $ResourceGroupName -name $VMName))
+			{
+				start-azvm $azvm
+			}
+		}
 	}
 }
 
