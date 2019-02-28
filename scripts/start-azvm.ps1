@@ -52,12 +52,18 @@ Function Start-AzureVM
 			If (((get-azvm -resourcegroupname $ResourceGroupName -name $vm -status) | Select-Object powerstate).powerstate -eq "VM running")
 			{
 				Write-Output "No need to start this vm - already running"
+				
+				get-azremotedesktopfile -resourcegroupname $ResourceGroupName -name $VMName
 			}
 			Else
 			{
 				ForEach ($azvm In (get-azvm -resourcegroupname $ResourceGroupName -name $vm))
 				{
 					start-azvm $azvm
+					
+					Start-Sleep 30
+					
+					get-azremotedesktopfile -name $azvm
 				}
 			}
 		}
@@ -70,12 +76,18 @@ Function Start-AzureVM
 		If ((get-azvm -resourcegroupname $ResourceGroupName -name $VMName -status | Select-Object powerstate).powerstate -eq "VM running")
 		{
 			Write-Output "$VMName is already running"
+			
+			get-azremotedesktopfile -resourcegroupname $ResourceGroupName -name $VMName
 		}
 		Else
 		{
 			ForEach ($azvm In (get-azvm -resourcegroupname $ResourceGroupName -name $VMName))
 			{
 				start-azvm $azvm
+				
+				Start-Sleep 30
+				
+				get-azremotedesktopfile -name $azvm 
 			}
 		}
 	}
