@@ -28,10 +28,8 @@ Function connectto-azure
 		Install-Module -Name az -AllowClobber
 	}
 	
-	
 		Connect-AzAccount 
 			
-		
 	
 }
 
